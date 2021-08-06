@@ -4,4 +4,5 @@ export default {
     LOGIN:'Login',
     GUESTIO:"Guestio",
     INTERNET:"veuillez connecter votre internet",
+    HELLO:"Bonjour",
   };

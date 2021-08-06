@@ -4,7 +4,6 @@ import {View, Text, StyleSheet, Image,TouchableOpacity,I18nManager,Alert} from '
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 import RNRestart from 'react-native-restart';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 //constants
 import strings from '../../constants/lang/LocalizedStrings'
 import * as CONSTANT from '../../styles/stylesConstants';
@@ -17,18 +16,18 @@ export default function Home({navigation}) {
 
   const myIcon = <Icon name="home" size={30} color="#900" />;
 
-  useEffect(() => {
-    selectedLng()
-  }, [])
+  // useEffect(() => {
+  //   selectedLng()
+  // }, [])
 
-  const selectedLng = async () => {
-    const lngData = await getLng()
-    if (!!lngData) {
-      console.log("lng data exists ==>>>", lngData)
-        strings.setLanguage(lngData)
-    }
-    console.log("selected Language data==>>>", lngData)
-  }
+  // const selectedLng = async () => {
+  //   const lngData = await getLng()
+  //   if (!!lngData) {
+  //     console.log("lng data exists ==>>>", lngData)
+  //       strings.setLanguage(lngData)
+  //   }
+  //   console.log("selected Language data==>>>", lngData)
+  // }
 
   const onChangeLng = async (lng) => {
     if (await NetInfoUtils.isNetworkAvailable()) {
@@ -60,6 +59,7 @@ export default function Home({navigation}) {
  
       <View>
   <Text style={{fontFamily:CONSTANT.FONTS.SEMIBOLD}}>{strings.WELCOME} {myIcon}</Text>
+  <Text style={{fontFamily:CONSTANT.FONTS.SEMIBOLD}}>{strings.HELLO}</Text>
       </View>
 
     <TouchableOpacity onPress={() => onChangeLng('en')} style={styles.btn}>

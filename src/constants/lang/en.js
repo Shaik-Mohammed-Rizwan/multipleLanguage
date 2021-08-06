@@ -3,5 +3,6 @@ export default {
     SIGNUP:'Signup',
     LOGIN:'Login',
     GUESTIO:"Guestio",
-    INTERNET:"Please connect your internet"
+    INTERNET:"Please connect your internet",
+    HELLO:"Hello",
   };
